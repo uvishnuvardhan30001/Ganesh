@@ -1,0 +1,599 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #fff8e7;
+    color: #4a2108;
+    overflow-x: hidden;
+}
+
+:root {
+    --dark-red: #5b1600;
+    --deep-red: #741e00;
+    --red: #982d00;
+    --gold: #e3a51a;
+    --bright-gold: #ffd65a;
+    --cream: #fff8e7;
+    --light-cream: #fffaf0;
+    --brown: #5c321d;
+}
+
+body::before {
+    content: "🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 22px;
+    background: var(--dark-red);
+    color: var(--bright-gold);
+    text-align: center;
+    font-size: 12px;
+    line-height: 20px;
+    z-index: 2000;
+    overflow: hidden;
+}
+
+/* ================= NAVBAR ================= */
+
+nav {
+    position: fixed;
+    top: 22px;
+    left: 0;
+    width: 100%;
+    z-index: 1500;
+    background: rgba(84, 20, 0, 0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 2px solid var(--gold);
+}
+
+.nav-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    padding: 8px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.logo-icon img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    display: block;
+}
+
+.logo-text {
+    line-height: 1.2;
+}
+
+.logo-telugu {
+    font-family: 'Noto Serif Telugu', serif;
+    color: var(--bright-gold);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.logo-name {
+    font-family: 'Cinzel', serif;
+    color: white;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.logo-location {
+    color: #ffdca0;
+    font-size: 10px;
+    margin-top: 3px;
+}
+
+/* NAV LINKS */
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--bright-gold);
+}
+
+/* ================= COMMON ================= */
+
+.page {
+    padding-top: 125px;
+    min-height: 100vh;
+}
+
+section {
+    padding: 75px 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-symbol {
+    color: var(--gold);
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.section-title h2 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(26px, 4vw, 38px);
+    color: var(--deep-red);
+    margin: 8px 0;
+}
+
+.section-title p {
+    color: #87654f;
+    font-size: 14px;
+}
+
+.telugu {
+    font-family: 'Noto Serif Telugu', serif;
+    color: var(--deep-red);
+    font-size: 21px;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 100vh;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(60, 12, 0, 0.92),
+            rgba(90, 20, 0, 0.65),
+            rgba(50, 10, 0, 0.92)
+        ),
+        url("https://images.unsplash.com/photo-1603819747793-6d8f8c4f2c7b?auto=format&fit=crop&w=2000&q=90");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 1000px;
+    padding: 50px 25px;
+}
+
+.om {
+    font-size: 75px;
+    color: var(--bright-gold);
+    margin-bottom: 10px;
+}
+
+.hero-telugu {
+    font-family: 'Noto Serif Telugu', serif;
+    font-size: clamp(25px, 4vw, 42px);
+    color: var(--bright-gold);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(25px, 5vw, 55px);
+    color: white;
+    margin-bottom: 15px;
+}
+
+.hero-location {
+    font-size: 18px;
+    color: #ffe4a6;
+    margin-bottom: 15px;
+}
+
+.hero-subtitle {
+    max-width: 750px;
+    margin: auto;
+    line-height: 1.8;
+    font-size: 16px;
+    color: #fff5dc;
+}
+
+.hero-buttons {
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 25px;
+    margin: 6px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #ffb300, #d77a00);
+    color: white;
+}
+
+.btn-outline {
+    border: 2px solid var(--bright-gold);
+    color: var(--bright-gold);
+}
+
+.btn-outline:hover {
+    background: var(--bright-gold);
+    color: var(--dark-red);
+}
+
+/* ================= ABOUT ================= */
+
+.about {
+    background: radial-gradient(circle at top, #fff2c4, #fffaf0 60%);
+}
+
+.about-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 25px;
+    border: 5px solid #e5b339;
+}
+
+.about-text h3 {
+    font-family: 'Noto Serif Telugu', serif;
+    color: var(--red);
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    line-height: 1.9;
+    margin-bottom: 15px;
+    color: #654738;
+}
+
+.mantra {
+    background: #fff0c7;
+    border-left: 5px solid var(--gold);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 25px;
+    color: #8a3900;
+    font-family: 'Noto Serif Telugu', serif;
+    font-size: 20px;
+    line-height: 1.9;
+}
+
+/* ================= CARDS ================= */
+
+.years,
+.annadhanam,
+.nimarjanam,
+.videos,
+.youth {
+    background: #fff8e7;
+}
+
+.year-grid,
+.members {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.year-card,
+.member {
+    background: white;
+    overflow: hidden;
+    border-radius: 18px;
+    border: 1px solid #efd18b;
+    box-shadow: 0 8px 25px rgba(90, 40, 0, 0.13);
+}
+
+.year-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.year-content {
+    padding: 20px;
+}
+
+.year-number {
+    display: inline-block;
+    background: var(--deep-red);
+    color: var(--bright-gold);
+    padding: 7px 16px;
+    border-radius: 20px;
+    font-family: 'Cinzel', serif;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.year-content h3 {
+    color: var(--deep-red);
+    margin-bottom: 8px;
+}
+
+.year-content p {
+    color: #765a4b;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* ================= SLIDER ================= */
+
+.slider-wrapper {
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+}
+
+.slider-window {
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.6s ease;
+}
+
+.slide {
+    min-width: 33.333%;
+    padding: 10px;
+}
+
+.slide-card {
+    background: white;
+    border-radius: 17px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(80, 35, 0, 0.15);
+    border: 1px solid #efd18b;
+}
+
+.slide-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.slide-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.slide-info h3 {
+    color: var(--deep-red);
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.slide-info p {
+    color: #765a4b;
+    font-size: 12px;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: var(--deep-red);
+    color: var(--bright-gold);
+    font-size: 25px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.slider-btn.prev {
+    left: -20px;
+}
+
+.slider-btn.next {
+    right: -20px;
+}
+
+/* ================= VIDEO ================= */
+
+.video-card {
+    position: relative;
+    background: #210900;
+    border-radius: 17px;
+    overflow: hidden;
+}
+
+.video-card iframe {
+    width: 100%;
+    height: 250px;
+    border: none;
+    display: block;
+}
+
+.video-title {
+    padding: 15px;
+    text-align: center;
+    color: white;
+    background: var(--dark-red);
+}
+
+.video-title h3 {
+    color: var(--bright-gold);
+}
+
+/* ================= YOUTH ================= */
+
+.member {
+    text-align: center;
+    padding: 25px 15px;
+}
+
+.member img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--gold);
+    margin-bottom: 15px;
+}
+
+.member h3 {
+    color: var(--deep-red);
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.member span {
+    font-size: 12px;
+    color: #98735b;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #320d00;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+footer h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--bright-gold);
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #e9cba7;
+    font-size: 13px;
+}
+
+.designer {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    color: #dcb994;
+}
+
+.designer strong {
+    color: var(--bright-gold);
+    font-size: 18px;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+
+    .slide {
+        min-width: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .nav-container {
+        padding: 6px 10px;
+    }
+
+    .logo-icon img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .logo-telugu {
+        font-size: 12px;
+    }
+
+    .logo-name {
+        font-size: 9px;
+    }
+
+    .logo-location {
+        font-size: 8px;
+    }
+
+    .slide {
+        min-width: 100%;
+    }
+
+    .slider-btn.prev {
+        left: 5px;
+    }
+
+    .slider-btn.next {
+        right: 5px;
+    }
+
+    .year-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .members {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .member img {
+        width: 95px;
+        height: 95px;
+    }
+}
