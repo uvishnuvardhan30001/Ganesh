@@ -4,17 +4,13 @@
 <head>
 
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>
-        Sri Vara Siddhi Vinayaka Seva Samithi | Parirala
+        Sri Vara Siddhi Vinayaka Seva Samithi | Paritala
     </title>
 
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect"
           href="https://fonts.gstatic.com"
           crossorigin>
@@ -28,14 +24,37 @@
 
 <body>
 
-<nav>
 
-    <div class="nav-container">
+<!-- TOP DECORATIVE BAR -->
+
+<div class="top-bar">
+    🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼
+</div>
+
+
+<!-- MOBILE MENU BUTTON -->
+
+<button class="menu-toggle" id="menuToggle" aria-label="Open Menu">
+    ☰
+</button>
+
+
+<!-- OVERLAY -->
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-logo">
 
         <a href="index.html" class="logo">
 
             <div class="logo-icon">
-                <img src="logo.png" alt="Sri Vara Siddhi Vinayaka Logo">
+                <img src="logo.png"
+                     alt="Sri Vara Siddhi Vinayaka Logo">
             </div>
 
             <div class="logo-text">
@@ -45,7 +64,7 @@
                 </div>
 
                 <div class="logo-name">
-                    SRI VARA SIDDHI VINAYAKA SEVA SAMITHI
+                    SRI VARA SIDDHI VINAYAKA
                 </div>
 
                 <div class="logo-location">
@@ -56,113 +75,166 @@
 
         </a>
 
-        <ul class="nav-links">
-
-            <li><a href="index.html">Home</a></li>
-
-            <li><a href="about.html">About</a></li>
-
-            <li><a href="idols.html">Ganesh Idols</a></li>
-
-            <li><a href="annadhanam.html">Annadhanam</a></li>
-
-            <li><a href="nimarjanam.html">Nimarjanam</a></li>
-
-            <li><a href="#">Videos</a></li>
-
-            <li><a href="youth.html">Youth</a></li>
-
-        </ul>
-
     </div>
 
-</nav>
+
+    <!-- CLOSE BUTTON -->
+
+    <button class="sidebar-close" id="sidebarClose">
+        ×
+    </button>
 
 
-<section class="hero" id="home">
+    <!-- NAVIGATION -->
 
-    <div class="hero-content">
+    <nav class="side-nav">
 
-        <div class="om">
-            ॐ
+        <a href="index.html" class="nav-item active">
+            <span class="nav-icon">🏠</span>
+            <span>Home</span>
+        </a>
+
+        <a href="about.html" class="nav-item">
+            <span class="nav-icon">🙏</span>
+            <span>About</span>
+        </a>
+
+        <a href="idols.html" class="nav-item">
+            <span class="nav-icon">🐘</span>
+            <span>Ganesh Idols</span>
+        </a>
+
+        <a href="annadhanam.html" class="nav-item">
+            <span class="nav-icon">🍚</span>
+            <span>Annadhanam</span>
+        </a>
+
+        <a href="nimarjanam.html" class="nav-item">
+            <span class="nav-icon">🌊</span>
+            <span>Nimarjanam</span>
+        </a>
+
+        <a href="#" class="nav-item">
+            <span class="nav-icon">🎥</span>
+            <span>Videos</span>
+        </a>
+
+        <a href="youth.html" class="nav-item">
+            <span class="nav-icon">👥</span>
+            <span>Youth Team</span>
+        </a>
+
+    </nav>
+
+
+    <!-- SIDEBAR BOTTOM -->
+
+    
+
+</aside>
+
+
+<!-- MAIN CONTENT -->
+
+<main class="main-content">
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="om">
+                ॐ
+            </div>
+
+            <div class="hero-telugu">
+                శ్రీ వర సిద్ధి వినాయక సేవా సమితి
+            </div>
+
+            <h1>
+                SRI VARA SIDDHI VINAYAKA
+                SEVA SAMITHI
+            </h1>
+
+            <div class="hero-location">
+                📍 Bustand Center, Paritala
+            </div>
+
+            <p class="hero-subtitle">
+
+                With the blessings of Lord Ganesha,
+                we celebrate devotion, unity, tradition
+                and community service every year.
+
+                <br><br>
+
+                🙏 Ganapathi Bappa Morya 🙏
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a href="idols.html"
+                   class="btn btn-primary">
+
+                    🐘 View Ganesh Idols
+
+                </a>
+
+                <a href="annadhanam.html"
+                   class="btn btn-outline">
+
+                    🍚 Maha Annadhanam
+
+                </a>
+
+            </div>
+
         </div>
 
-        <div class="hero-telugu">
-            శ్రీ వర సిద్ధి వినాయక సేవా సమితి
-        </div>
+    </section>
 
-        <h1>
-            SRI VARA SIDDHI VINAYAKA
-            SEVA SAMITHI
-        </h1>
 
-        <div class="hero-location">
-            📍 Bustand Center, Paritala
-        </div>
+    <!-- FOOTER -->
 
-        <p class="hero-subtitle">
+    <footer>
 
-            With the blessings of Lord Ganesha,
-            we celebrate devotion, unity, tradition
-            and community service every year.
+        <h3>
+            🕉️ Sri Vara Siddhi Vinayaka Seva Samithi
+        </h3>
 
-            <br><br>
-
-            🙏 Ganapathi Bappa Morya 🙏
-
+        <p>
+            Busstand Center, Paritala
         </p>
 
-        <div class="hero-buttons">
+        <p class="footer-bappa">
+            🙏 Ganapathi Bappa Morya 🙏
+        </p>
 
-            <a href="idols.html"
-               class="btn btn-primary">
+        <div class="designer">
 
-                🐘 View Ganesh Idols
+            Website Designed & Developed by
 
-            </a>
-
-            <a href="annadhanam.html"
-               class="btn btn-outline">
-
-                🍚 Maha Annadhanam
-
-            </a>
+            <strong>
+                UPPULURI VISHNU VARDHAN
+            </strong>
 
         </div>
 
-    </div>
+        <p class="copyright">
+            © 2026 Sri Vara Siddhi Vinayaka Seva Samithi.
+            All Rights Reserved.
+        </p>
 
-</section>
+    </footer>
+
+</main>
 
 
-<footer>
-
-    <h3>
-        🕉️ Sri Vara Siddhi Vinayaka Seva Samithi
-    </h3>
-
-    <p>
-        Busstand Center, Parirala
-    </p>
-
-    <p style="margin-top:10px;">
-        🙏 Ganapathi Bappa Morya 🙏
-    </p>
-    <br>
-     Website Designed & Developed by
-    
-       
-
-        <strong >
-            UPPULURI VISHNU VARDHAN
-        </strong>
-
-    <p style="margin-top:20px;">
-        © 2026 Sri Vara Siddhi Vinayaka Seva Samithi.
-        All Rights Reserved.
-    </p>
-
-</footer>
+<script src="js/script.js"></script>
 
 </body>
 </html>

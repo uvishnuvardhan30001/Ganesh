@@ -19,11 +19,6 @@ body {
     overflow-x: hidden;
 }
 
-
-/* =========================================================
-   COLORS
-========================================================= */
-
 :root {
     --dark-red: #5b1600;
     --deep-red: #741e00;
@@ -36,17 +31,18 @@ body {
     --light-cream: #fffaf0;
 
     --brown: #5c321d;
+
+    --sidebar-width: 285px;
 }
 
 
 /* =========================================================
-   TOP DECORATIVE BAR
+   TOP BAR
 ========================================================= */
 
-body::before {
-    content: "🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼";
-
+.top-bar {
     position: fixed;
+
     top: 0;
     left: 0;
 
@@ -60,219 +56,450 @@ body::before {
     text-align: center;
 
     font-size: 12px;
-    line-height: 20px;
+    line-height: 22px;
 
-    z-index: 2000;
+    z-index: 3000;
 
     overflow: hidden;
+
+    letter-spacing: 3px;
 }
 
 
 /* =========================================================
-   NAVBAR
+   SIDEBAR
 ========================================================= */
 
-nav {
+.sidebar {
+
     position: fixed;
 
     top: 22px;
     left: 0;
 
-    width: 100%;
+    width: var(--sidebar-width);
+    height: calc(100vh - 22px);
 
-    z-index: 1500;
+    background:
+        linear-gradient(
+            180deg,
+            #541300 0%,
+            #681900 55%,
+            #3a0c00 100%
+        );
 
-    background: rgba(84, 20, 0, 0.98);
+    border-right: 2px solid var(--gold);
 
-    backdrop-filter: blur(12px);
-
-    border-bottom: 2px solid var(--gold);
-}
-
-
-.nav-container {
-    width: 100%;
-
-    max-width: 1400px;
-
-    margin: auto;
-
-    padding: 8px 20px;
+    z-index: 2500;
 
     display: flex;
 
-    align-items: center;
+    flex-direction: column;
 
-    justify-content: space-between;
+    box-shadow:
+        8px 0 30px rgba(50, 10, 0, 0.25);
 
-    gap: 20px;
+    transition:
+        transform 0.35s ease;
 }
 
 
 /* =========================================================
-   LOGO
+   SIDEBAR LOGO
 ========================================================= */
 
+.sidebar-logo {
+
+    padding: 25px 18px 22px;
+
+    border-bottom:
+        1px solid rgba(255, 214, 90, 0.25);
+}
+
 .logo {
+
     display: flex;
 
     align-items: center;
 
-    gap: 10px;
+    gap: 12px;
 
     text-decoration: none;
-
-    flex-shrink: 0;
 }
 
 .logo-icon {
+
+    width: 62px;
+    height: 62px;
+
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     flex-shrink: 0;
 }
 
 .logo-icon img {
-    width: 55px;
-    height: 55px;
+
+    width: 62px;
+    height: 62px;
 
     object-fit: contain;
 
     display: block;
 }
 
-
-/* LOGO TEXT */
-
 .logo-text {
-    line-height: 1.2;
+
+    line-height: 1.25;
+
+    min-width: 0;
 }
 
 .logo-telugu {
-    font-family: 'Noto Serif Telugu', serif;
+
+    font-family:
+        'Noto Serif Telugu',
+        serif;
 
     color: var(--bright-gold);
 
-    font-size: 16px;
+    font-size: 15px;
 
     font-weight: 700;
+
+    white-space: nowrap;
 }
 
 .logo-name {
-    font-family: 'Cinzel', serif;
+
+    font-family:
+        'Cinzel',
+        serif;
 
     color: white;
 
-    font-size: 12px;
+    font-size: 10px;
 
     font-weight: 800;
-}
 
-.logo-location {
-    color: #ffdca0;
-
-    font-size: 10px;
+    letter-spacing: 0.3px;
 
     margin-top: 3px;
 }
 
+.logo-location {
+
+    color: #ffdca0;
+
+    font-size: 9px;
+
+    margin-top: 5px;
+}
+
 
 /* =========================================================
-   NAVIGATION LINKS
+   CLOSE BUTTON
 ========================================================= */
 
-.nav-links {
-    list-style: none;
+.sidebar-close {
+
+    display: none;
+
+    position: absolute;
+
+    top: 12px;
+    right: 12px;
+
+    width: 38px;
+    height: 38px;
+
+    border: 1px solid var(--gold);
+
+    border-radius: 50%;
+
+    background: rgba(255, 214, 90, 0.1);
+
+    color: var(--bright-gold);
+
+    font-size: 27px;
+
+    line-height: 30px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   SIDE NAVIGATION
+========================================================= */
+
+.side-nav {
+
+    padding: 25px 14px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.nav-item {
+
+    position: relative;
 
     display: flex;
 
     align-items: center;
 
-    gap: 18px;
-}
+    gap: 15px;
 
-.nav-links li {
-    margin: 0;
-    padding: 0;
-}
+    padding: 14px 17px;
 
-.nav-links a {
-    color: white;
+    border-radius: 12px;
+
+    color: #fff4dc;
 
     text-decoration: none;
 
-    font-size: 13px;
+    font-size: 14px;
 
     font-weight: 600;
 
-    transition: 0.3s;
-
-    white-space: nowrap;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
-.nav-links a:hover {
-    color: var(--bright-gold);
-}
+.nav-icon {
 
-.nav-links a.active {
-    color: var(--bright-gold);
-}
+    width: 27px;
 
-
-/* =========================================================
-   PAGE COMMON
-========================================================= */
-
-.page {
-    padding-top: 125px;
-
-    min-height: 100vh;
-}
-
-
-/* =========================================================
-   COMMON SECTION
-========================================================= */
-
-section {
-    padding: 75px 20px;
-}
-
-.section-title {
     text-align: center;
 
-    margin-bottom: 45px;
+    font-size: 20px;
 }
 
-.section-symbol {
-    color: var(--gold);
+.nav-item:hover {
 
-    font-size: 30px;
+    background:
+        rgba(255, 214, 90, 0.12);
+
+    color: var(--bright-gold);
+
+    transform: translateX(4px);
+}
+
+.nav-item.active {
+
+    background:
+        linear-gradient(
+            135deg,
+            #e3a51a,
+            #b96e00
+        );
+
+    color: white;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.nav-item.active::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -14px;
+
+    top: 9px;
+
+    width: 4px;
+
+    height: calc(100% - 18px);
+
+    border-radius: 5px;
+
+    background: var(--bright-gold);
+}
+
+
+/* =========================================================
+   SIDEBAR BOTTOM
+========================================================= */
+
+.sidebar-bottom {
+
+    margin-top: auto;
+
+    padding: 25px 15px 30px;
+
+    text-align: center;
+
+    border-top:
+        1px solid rgba(255, 214, 90, 0.2);
+}
+
+.sidebar-om {
+
+    font-size: 45px;
+
+    color: var(--bright-gold);
 
     margin-bottom: 5px;
 }
 
+.sidebar-bottom p {
+
+    color: #ffe7b2;
+
+    font-family:
+        'Noto Serif Telugu',
+        serif;
+
+    font-size: 13px;
+
+    margin-bottom: 8px;
+}
+
+.sidebar-bottom span {
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.menu-toggle {
+
+    display: none;
+
+    position: fixed;
+
+    top: 34px;
+    left: 15px;
+
+    width: 46px;
+    height: 46px;
+
+    border: 2px solid var(--gold);
+
+    border-radius: 12px;
+
+    background: var(--deep-red);
+
+    color: var(--bright-gold);
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    z-index: 4000;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   SIDEBAR OVERLAY
+========================================================= */
+
+.sidebar-overlay {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(0, 0, 0, 0.6);
+
+    z-index: 2200;
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+}
+
+.sidebar-overlay.show {
+
+    display: block;
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.main-content {
+
+    margin-left: var(--sidebar-width);
+
+    min-height: 100vh;
+
+    width: calc(100% - var(--sidebar-width));
+}
+
+
+/* =========================================================
+   COMMON SECTIONS
+========================================================= */
+
+section {
+
+    padding: 80px 30px;
+}
+
+.section-title {
+
+    text-align: center;
+
+    margin-bottom: 50px;
+}
+
+.section-symbol {
+
+    color: var(--gold);
+
+    font-size: 35px;
+
+    margin-bottom: 8px;
+}
+
 .section-title h2 {
+
     font-family: 'Cinzel', serif;
 
-    font-size: clamp(26px, 4vw, 38px);
+    font-size:
+        clamp(28px, 4vw, 42px);
 
     color: var(--deep-red);
 
-    margin: 8px 0;
+    margin: 10px 0;
 }
 
 .section-title p {
+
     color: #87654f;
 
     font-size: 14px;
 }
 
 .telugu {
-    font-family: 'Noto Serif Telugu', serif;
+
+    font-family:
+        'Noto Serif Telugu',
+        serif;
 
     color: var(--deep-red);
 
@@ -285,7 +512,11 @@ section {
 ========================================================= */
 
 .page-header {
-    padding: 150px 20px 65px;
+
+    min-height: 310px;
+
+    padding:
+        125px 25px 60px;
 
     text-align: center;
 
@@ -296,27 +527,44 @@ section {
             #fffaf0 70%
         );
 
-    border-bottom: 1px solid #efd18b;
+    border-bottom:
+        1px solid #efd18b;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
 }
 
 .page-header .section-symbol {
-    font-size: 45px;
+
+    font-size: 50px;
 
     margin-bottom: 10px;
 }
 
 .page-header h1 {
-    font-family: 'Cinzel', serif;
+
+    font-family:
+        'Cinzel',
+        serif;
 
     color: var(--deep-red);
 
-    font-size: clamp(32px, 5vw, 52px);
+    font-size:
+        clamp(32px, 5vw, 52px);
 
     margin-bottom: 10px;
 }
 
 .page-header p {
-    font-family: 'Noto Serif Telugu', serif;
+
+    font-family:
+        'Noto Serif Telugu',
+        serif;
 
     color: #87654f;
 
@@ -324,25 +572,8 @@ section {
 }
 
 .page-header .telugu {
+
     margin-bottom: 8px;
-}
-
-
-/* =========================================================
-   CONTENT SECTION
-========================================================= */
-
-.content-section {
-    padding: 70px 20px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #fff8e7,
-            #fffaf0
-        );
-
-    min-height: 60vh;
 }
 
 
@@ -351,9 +582,8 @@ section {
 ========================================================= */
 
 .hero {
-    min-height: calc(100vh - 22px);
 
-    margin-top: 100px;
+    min-height: 100vh;
 
     display: flex;
 
@@ -368,25 +598,30 @@ section {
     background:
         linear-gradient(
             90deg,
-            rgba(60, 12, 0, 0.92),
+            rgba(60, 12, 0, 0.93),
             rgba(90, 20, 0, 0.65),
-            rgba(50, 10, 0, 0.92)
+            rgba(50, 10, 0, 0.93)
         ),
         url("https://images.unsplash.com/photo-1603819747793-6d8f8c4f2c7b?auto=format&fit=crop&w=2000&q=90");
 
     background-size: cover;
 
     background-position: center;
+
+    padding:
+        100px 30px 60px;
 }
 
 .hero-content {
+
     max-width: 1000px;
 
-    padding: 50px 25px;
+    padding: 40px 20px;
 }
 
 .om {
-    font-size: 75px;
+
+    font-size: 80px;
 
     color: var(--bright-gold);
 
@@ -394,9 +629,13 @@ section {
 }
 
 .hero-telugu {
-    font-family: 'Noto Serif Telugu', serif;
 
-    font-size: clamp(25px, 4vw, 42px);
+    font-family:
+        'Noto Serif Telugu',
+        serif;
+
+    font-size:
+        clamp(25px, 4vw, 42px);
 
     color: var(--bright-gold);
 
@@ -406,9 +645,13 @@ section {
 }
 
 .hero h1 {
-    font-family: 'Cinzel', serif;
 
-    font-size: clamp(25px, 5vw, 55px);
+    font-family:
+        'Cinzel',
+        serif;
+
+    font-size:
+        clamp(25px, 5vw, 55px);
 
     color: white;
 
@@ -416,6 +659,7 @@ section {
 }
 
 .hero-location {
+
     font-size: 18px;
 
     color: #ffe4a6;
@@ -424,6 +668,7 @@ section {
 }
 
 .hero-subtitle {
+
     max-width: 750px;
 
     margin: auto;
@@ -436,6 +681,7 @@ section {
 }
 
 .hero-buttons {
+
     margin-top: 30px;
 }
 
@@ -445,9 +691,10 @@ section {
 ========================================================= */
 
 .btn {
+
     display: inline-block;
 
-    padding: 13px 25px;
+    padding: 14px 27px;
 
     margin: 6px;
 
@@ -463,15 +710,18 @@ section {
 }
 
 .btn:hover {
+
     transform: translateY(-3px);
 }
 
 .btn-primary {
-    background: linear-gradient(
-        135deg,
-        #ffb300,
-        #d77a00
-    );
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffb300,
+            #d77a00
+        );
 
     color: white;
 
@@ -480,17 +730,21 @@ section {
 }
 
 .btn-primary:hover {
+
     box-shadow:
         0 10px 25px rgba(255, 166, 0, 0.4);
 }
 
 .btn-outline {
-    border: 2px solid var(--bright-gold);
+
+    border:
+        2px solid var(--bright-gold);
 
     color: var(--bright-gold);
 }
 
 .btn-outline:hover {
+
     background: var(--bright-gold);
 
     color: var(--dark-red);
@@ -502,6 +756,9 @@ section {
 ========================================================= */
 
 .about {
+
+    min-height: 100vh;
+
     background:
         radial-gradient(
             circle at top,
@@ -511,40 +768,48 @@ section {
 }
 
 .about-container {
-    max-width: 1100px;
+
+    max-width: 1150px;
 
     margin: auto;
 
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+        1fr 1fr;
 
-    gap: 45px;
+    gap: 50px;
 
     align-items: center;
 }
 
 .about-image {
+
     position: relative;
 }
 
 .about-image img {
+
     width: 100%;
 
-    height: 450px;
+    height: 480px;
 
     object-fit: cover;
 
     border-radius: 25px;
 
-    border: 5px solid #e5b339;
+    border:
+        5px solid #e5b339;
 
     box-shadow:
         0 20px 45px rgba(90, 30, 0, 0.22);
 }
 
 .about-text h3 {
-    font-family: 'Noto Serif Telugu', serif;
+
+    font-family:
+        'Noto Serif Telugu',
+        serif;
 
     color: var(--red);
 
@@ -554,6 +819,7 @@ section {
 }
 
 .about-text p {
+
     line-height: 1.9;
 
     margin-bottom: 15px;
@@ -562,9 +828,11 @@ section {
 }
 
 .mantra {
+
     background: #fff0c7;
 
-    border-left: 5px solid var(--gold);
+    border-left:
+        5px solid var(--gold);
 
     border-radius: 8px;
 
@@ -574,7 +842,9 @@ section {
 
     color: #8a3900;
 
-    font-family: 'Noto Serif Telugu', serif;
+    font-family:
+        'Noto Serif Telugu',
+        serif;
 
     font-size: 20px;
 
@@ -583,10 +853,14 @@ section {
 
 
 /* =========================================================
-   GANESH IDOLS
+   CONTENT SECTION
 ========================================================= */
 
-.years {
+.content-section {
+
+    padding:
+        75px 30px;
+
     background:
         linear-gradient(
             135deg,
@@ -594,39 +868,43 @@ section {
             #fffaf0
         );
 
-    min-height: 100vh;
+    min-height: 60vh;
 }
 
 
 /* =========================================================
-   SQUARE CARD GRID
+   CARD GRID
 ========================================================= */
 
 .card-grid {
+
     max-width: 1250px;
 
     margin: auto;
 
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+        repeat(3, 1fr);
 
     gap: 30px;
 }
 
 
 /* =========================================================
-   SQUARE IDOL CARD
+   YEAR CARD
 ========================================================= */
 
 .year-card {
+
     background: #fffaf0;
 
     overflow: hidden;
 
     border-radius: 22px;
 
-    border: 2px solid #e3a51a;
+    border:
+        2px solid #e3a51a;
 
     box-shadow:
         0 10px 30px rgba(91, 22, 0, 0.16);
@@ -639,18 +917,16 @@ section {
 }
 
 .year-card:hover {
-    transform: translateY(-10px) scale(1.02);
+
+    transform:
+        translateY(-10px) scale(1.02);
 
     box-shadow:
         0 20px 45px rgba(91, 22, 0, 0.28);
 }
 
-
-/* =========================================================
-   SQUARE GANESH IMAGE
-========================================================= */
-
 .year-card img {
+
     width: 100%;
 
     aspect-ratio: 1 / 1;
@@ -661,20 +937,19 @@ section {
 
     display: block;
 
-    transition: transform 0.5s ease;
+    transition:
+        transform 0.5s ease;
 }
 
 .year-card:hover img {
+
     transform: scale(1.05);
 }
 
-
-/* =========================================================
-   CARD CONTENT
-========================================================= */
-
 .year-content {
-    padding: 18px 20px 22px;
+
+    padding:
+        18px 20px 22px;
 
     text-align: center;
 
@@ -686,12 +961,8 @@ section {
         );
 }
 
-
-/* =========================================================
-   YEAR BADGE
-========================================================= */
-
 .year-number {
+
     display: inline-block;
 
     background:
@@ -703,11 +974,14 @@ section {
 
     color: var(--bright-gold);
 
-    padding: 6px 18px;
+    padding:
+        6px 18px;
 
     border-radius: 25px;
 
-    font-family: 'Cinzel', serif;
+    font-family:
+        'Cinzel',
+        serif;
 
     font-size: 14px;
 
@@ -715,30 +989,25 @@ section {
 
     margin-bottom: 10px;
 
-    border: 1px solid var(--gold);
+    border:
+        1px solid var(--gold);
 }
 
-
-/* =========================================================
-   CARD TITLE
-========================================================= */
-
 .year-content h3 {
+
     color: var(--deep-red);
 
-    font-family: 'Cinzel', serif;
+    font-family:
+        'Cinzel',
+        serif;
 
     font-size: 18px;
 
     margin-bottom: 7px;
 }
 
-
-/* =========================================================
-   CARD DESCRIPTION
-========================================================= */
-
 .year-content p {
+
     color: #765a4b;
 
     font-size: 13px;
@@ -750,34 +1019,83 @@ section {
 
 
 /* =========================================================
-   ANNADHANAM
+   MEMBERS
 ========================================================= */
 
-.annadhanam {
-    background:
-        linear-gradient(
-            135deg,
-            #fff0c9,
-            #fffaf0
+.members {
+
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(190px, 1fr)
         );
 
-    min-height: 100vh;
+    gap: 25px;
 }
 
+.member {
 
-/* =========================================================
-   NIMARJANAM
-========================================================= */
+    background: white;
 
-.nimarjanam {
-    background:
-        linear-gradient(
-            135deg,
-            #fff7e4,
-            #fffaf0
-        );
+    text-align: center;
 
-    min-height: 100vh;
+    padding: 25px 15px;
+
+    border-radius: 18px;
+
+    border:
+        1px solid #efd18b;
+
+    box-shadow:
+        0 8px 25px rgba(90, 40, 0, 0.12);
+
+    transition: 0.3s;
+}
+
+.member:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 18px 35px rgba(90, 40, 0, 0.2);
+}
+
+.member img {
+
+    width: 120px;
+
+    height: 120px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border:
+        5px solid var(--gold);
+
+    margin-bottom: 15px;
+}
+
+.member h3 {
+
+    color: var(--deep-red);
+
+    font-size: 16px;
+
+    margin-bottom: 6px;
+}
+
+.member span {
+
+    font-size: 12px;
+
+    color: #98735b;
 }
 
 
@@ -786,10 +1104,12 @@ section {
 ========================================================= */
 
 .slider-section {
+
     min-height: 100vh;
 }
 
 .slider-wrapper {
+
     max-width: 1200px;
 
     margin: auto;
@@ -800,12 +1120,14 @@ section {
 }
 
 .slider-window {
+
     overflow: hidden;
 
     border-radius: 20px;
 }
 
 .slider-track {
+
     display: flex;
 
     transition:
@@ -813,12 +1135,14 @@ section {
 }
 
 .slide {
+
     min-width: 33.333333%;
 
     padding: 10px;
 }
 
 .slide-card {
+
     background: white;
 
     border-radius: 17px;
@@ -828,19 +1152,23 @@ section {
     box-shadow:
         0 8px 25px rgba(80, 35, 0, 0.15);
 
-    border: 1px solid #efd18b;
+    border:
+        1px solid #efd18b;
 
     transition: 0.3s;
 }
 
 .slide-card:hover {
-    transform: translateY(-6px);
+
+    transform:
+        translateY(-6px);
 
     box-shadow:
         0 15px 35px rgba(80, 35, 0, 0.22);
 }
 
 .slide-card img {
+
     width: 100%;
 
     height: 250px;
@@ -851,12 +1179,14 @@ section {
 }
 
 .slide-info {
+
     padding: 18px;
 
     text-align: center;
 }
 
 .slide-info h3 {
+
     color: var(--deep-red);
 
     font-size: 17px;
@@ -865,6 +1195,7 @@ section {
 }
 
 .slide-info p {
+
     color: #765a4b;
 
     font-size: 13px;
@@ -878,11 +1209,13 @@ section {
 ========================================================= */
 
 .slider-btn {
+
     position: absolute;
 
     top: 50%;
 
-    transform: translateY(-50%);
+    transform:
+        translateY(-50%);
 
     width: 45px;
 
@@ -909,31 +1242,36 @@ section {
 }
 
 .slider-btn:hover {
+
     background: var(--gold);
 
     color: white;
 }
 
 .slider-btn.prev {
+
     left: -18px;
 }
 
 .slider-btn.next {
+
     right: -18px;
 }
 
 
 /* =========================================================
-   SLIDER DOTS
+   DOTS
 ========================================================= */
 
 .dots {
+
     text-align: center;
 
     margin-top: 20px;
 }
 
 .dot {
+
     display: inline-block;
 
     width: 10px;
@@ -952,229 +1290,10 @@ section {
 }
 
 .dot.active {
+
     background: var(--deep-red);
 
     transform: scale(1.2);
-}
-
-
-/* =========================================================
-   VIDEOS PAGE
-========================================================= */
-
-.videos {
-    background:
-        linear-gradient(
-            135deg,
-            #fdf4ff,
-            #fffaf0
-        );
-
-    min-height: 100vh;
-}
-
-.videos .slide-card {
-    background: #210900;
-}
-
-.video-card {
-    position: relative;
-
-    background: #210900;
-
-    border-radius: 17px;
-
-    overflow: hidden;
-
-    box-shadow:
-        0 8px 25px rgba(80, 35, 0, 0.15);
-}
-
-.video-card iframe {
-    width: 100%;
-
-    height: 250px;
-
-    border: none;
-
-    display: block;
-}
-
-.video-title {
-    padding: 15px;
-
-    text-align: center;
-
-    color: white;
-
-    background: var(--dark-red);
-}
-
-.video-title h3 {
-    color: var(--bright-gold);
-
-    font-size: 15px;
-
-    margin-bottom: 5px;
-}
-
-.video-title p {
-    font-size: 11px;
-
-    color: #ffe5b0;
-}
-
-
-/* =========================================================
-   YOUTH PAGE
-========================================================= */
-
-.youth {
-    background:
-        radial-gradient(
-            circle at top,
-            #fff0c8,
-            #fffaf0
-        );
-
-    min-height: 100vh;
-}
-
-
-/* =========================================================
-   MEMBERS GRID
-========================================================= */
-
-.members {
-    max-width: 1150px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(190px, 1fr)
-        );
-
-    gap: 25px;
-}
-
-
-/* =========================================================
-   MEMBER CARD
-========================================================= */
-
-.member {
-    background: white;
-
-    text-align: center;
-
-    padding: 25px 15px;
-
-    border-radius: 18px;
-
-    border: 1px solid #efd18b;
-
-    box-shadow:
-        0 8px 25px rgba(90, 40, 0, 0.12);
-
-    transition: 0.3s;
-}
-
-.member:hover {
-    transform: translateY(-8px);
-
-    box-shadow:
-        0 18px 35px rgba(90, 40, 0, 0.2);
-}
-
-
-/* MEMBER PHOTO */
-
-.member img {
-    width: 120px;
-
-    height: 120px;
-
-    object-fit: cover;
-
-    border-radius: 50%;
-
-    border: 5px solid var(--gold);
-
-    margin-bottom: 15px;
-}
-
-.member h3 {
-    color: var(--deep-red);
-
-    font-size: 16px;
-
-    margin-bottom: 6px;
-}
-
-.member span {
-    font-size: 12px;
-
-    color: #98735b;
-}
-
-
-/* =========================================================
-   DEVOTIONAL
-========================================================= */
-
-.devotional {
-    background:
-        linear-gradient(
-            135deg,
-            #541300,
-            #761e00
-        );
-
-    color: white;
-
-    text-align: center;
-
-    position: relative;
-
-    overflow: hidden;
-}
-
-.devotional h2 {
-    font-family: 'Cinzel', serif;
-
-    color: var(--bright-gold);
-
-    font-size: 35px;
-
-    margin-bottom: 25px;
-}
-
-.quote {
-    max-width: 800px;
-
-    margin: auto;
-
-    font-family: 'Noto Serif Telugu', serif;
-
-    font-size: 23px;
-
-    line-height: 2;
-
-    color: #fff1c8;
-}
-
-.stars {
-    margin-top: 25px;
-
-    color: var(--bright-gold);
-
-    font-size: 25px;
-
-    letter-spacing: 10px;
 }
 
 
@@ -1183,17 +1302,22 @@ section {
 ========================================================= */
 
 footer {
+
     background: #320d00;
 
     color: white;
 
     text-align: center;
 
-    padding: 40px 20px;
+    padding:
+        45px 20px;
 }
 
 footer h3 {
-    font-family: 'Cinzel', serif;
+
+    font-family:
+        'Cinzel',
+        serif;
 
     color: var(--bright-gold);
 
@@ -1201,99 +1325,65 @@ footer h3 {
 }
 
 footer p {
+
     color: #e9cba7;
 
     font-size: 13px;
 }
 
+.footer-bappa {
+
+    margin-top: 12px;
+}
+
 .designer {
+
     margin-top: 25px;
 
     padding-top: 20px;
 
     border-top:
-        1px solid rgba(255,255,255,0.15);
+        1px solid rgba(
+            255,
+            255,
+            255,
+            0.15
+        );
 
     color: #dcb994;
+
+    font-size: 13px;
 }
 
 .designer strong {
+
+    display: block;
+
     color: var(--bright-gold);
 
     font-size: 18px;
+
+    margin-top: 8px;
+}
+
+.copyright {
+
+    margin-top: 20px;
 }
 
 
 /* =========================================================
-   TABLET - 900px
+   TABLET
 ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
 
-    .nav-container {
-        max-width: 100%;
-
-        padding-left: 12px;
-
-        padding-right: 12px;
-    }
-
-    .nav-links {
-        display: none;
-    }
-
-    .about-container {
-        grid-template-columns: 1fr;
-    }
-
-    .about-image img {
-        height: 350px;
-    }
-
-    /* IDOL CARDS - 2 PER ROW */
-
-    .card-grid {
-        grid-template-columns: repeat(2, 1fr);
-
-        gap: 22px;
-    }
-
-    .slide {
-        min-width: 50%;
-    }
-
-    .slider-btn.prev {
-        left: 5px;
-    }
-
-    .slider-btn.next {
-        right: 5px;
-    }
-}
-
-
-/* =========================================================
-   MOBILE - 600px
-========================================================= */
-
-@media (max-width: 600px) {
-
-    .nav-container {
-        padding: 6px 10px;
-    }
-
-    .logo {
-        gap: 8px;
-    }
-
-    .logo-icon img {
-        width: 45px;
-
-        height: 45px;
+    :root {
+        --sidebar-width: 240px;
     }
 
     .logo-telugu {
-        font-size: 12px;
+        font-size: 13px;
     }
 
     .logo-name {
@@ -1304,79 +1394,229 @@ footer p {
         font-size: 8px;
     }
 
-    .page {
-        padding-top: 105px;
+    .nav-item {
+        padding: 13px 12px;
+        font-size: 13px;
     }
+
+    .card-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 24px;
+    }
+
+    .about-container {
+
+        gap: 30px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    :root {
+        --sidebar-width: 285px;
+    }
+
+
+    /* SIDEBAR */
+
+    .sidebar {
+
+        transform:
+            translateX(-100%);
+
+        box-shadow:
+            10px 0 40px rgba(
+                0,
+                0,
+                0,
+                0.35
+            );
+    }
+
+    .sidebar.open {
+
+        transform:
+            translateX(0);
+    }
+
+
+    /* CLOSE BUTTON */
+
+    .sidebar-close {
+
+        display: block;
+    }
+
+
+    /* MENU BUTTON */
+
+    .menu-toggle {
+
+        display: block;
+    }
+
+
+    /* MAIN */
+
+    .main-content {
+
+        margin-left: 0;
+
+        width: 100%;
+    }
+
+
+    /* PAGE */
 
     section {
-        padding: 60px 14px;
-    }
 
-
-    /* PAGE HEADER */
-
-    .page-header {
-        padding: 125px 15px 50px;
-    }
-
-    .page-header h1 {
-        font-size: 32px;
-    }
-
-    .page-header p {
-        font-size: 17px;
+        padding:
+            65px 18px;
     }
 
 
     /* HERO */
 
     .hero {
-        margin-top: 90px;
 
-        min-height: calc(100vh - 90px);
+        min-height: 100vh;
+
+        padding:
+            100px 18px 50px;
+    }
+
+    .hero-content {
+
+        padding:
+            30px 10px;
     }
 
     .om {
-        font-size: 55px;
+
+        font-size: 60px;
+    }
+
+    .hero-telugu {
+
+        font-size: 25px;
+    }
+
+    .hero h1 {
+
+        font-size: 28px;
+
+        line-height: 1.4;
     }
 
     .hero-location {
+
         font-size: 15px;
     }
 
     .hero-subtitle {
+
         font-size: 14px;
+
+        line-height: 1.7;
     }
 
 
-    /* IDOL CARDS - ONE PER ROW */
+    /* PAGE HEADER */
 
-    .card-grid {
+    .page-header {
+
+        min-height: 280px;
+
+        padding:
+            110px 18px 50px;
+    }
+
+    .page-header h1 {
+
+        font-size: 32px;
+
+        line-height: 1.3;
+    }
+
+    .page-header p {
+
+        font-size: 17px;
+    }
+
+
+    /* ABOUT */
+
+    .about-container {
+
         grid-template-columns: 1fr;
 
-        max-width: 420px;
+        gap: 30px;
+    }
+
+    .about-image img {
+
+        height: 350px;
+    }
+
+
+    /* CARDS */
+
+    .card-grid {
+
+        grid-template-columns: 1fr;
+
+        max-width: 500px;
 
         gap: 25px;
     }
 
-    .year-card img {
-        aspect-ratio: 1 / 1;
 
-        height: auto;
+    /* MEMBERS */
+
+    .members {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 15px;
+    }
+
+    .member {
+
+        padding:
+            20px 10px;
+    }
+
+    .member img {
+
+        width: 95px;
+
+        height: 95px;
     }
 
 
     /* SLIDER */
 
     .slide {
+
         min-width: 100%;
     }
 
     .slide-card img {
+
         height: 240px;
     }
 
     .slider-btn {
+
         width: 40px;
 
         height: 40px;
@@ -1385,68 +1625,113 @@ footer p {
     }
 
     .slider-btn.prev {
+
         left: 5px;
     }
 
     .slider-btn.next {
+
         right: 5px;
-    }
-
-    /* MEMBERS */
-
-    .members {
-        grid-template-columns: repeat(2, 1fr);
-
-        gap: 15px;
-    }
-
-    .member {
-        padding: 20px 10px;
-    }
-
-    .member img {
-        width: 95px;
-
-        height: 95px;
-    }
-
-
-    /* VIDEOS */
-
-    .video-card iframe {
-        height: 220px;
     }
 }
 
 
 /* =========================================================
-   VERY SMALL MOBILE - 400px
+   SMALL MOBILE
 ========================================================= */
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
+
+    .menu-toggle {
+
+        width: 43px;
+
+        height: 43px;
+
+        font-size: 22px;
+
+        top: 32px;
+
+        left: 12px;
+    }
+
+    .sidebar {
+
+        width: 280px;
+    }
+
+    .logo-icon {
+
+        width: 55px;
+        height: 55px;
+    }
+
+    .logo-icon img {
+
+        width: 55px;
+        height: 55px;
+    }
+
+    .logo-telugu {
+
+        font-size: 12px;
+    }
 
     .logo-name {
+
         font-size: 8px;
     }
 
     .logo-location {
+
         font-size: 7px;
     }
 
-    .members {
-        grid-template-columns: 1fr;
+    .hero-telugu {
+
+        font-size: 22px;
     }
 
     .hero h1 {
-        font-size: 26px;
+
+        font-size: 25px;
     }
 
-    .hero-telugu {
-        font-size: 23px;
+    .hero-buttons {
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
     }
 
-    .year-content h3 {
-        font-size: 16px;
+    .btn {
+
+        width: 90%;
+
+        max-width: 300px;
+
+        text-align: center;
+    }
+
+    .members {
+
+        grid-template-columns: 1fr;
+    }
+
+    .about-image img {
+
+        height: 300px;
+    }
+
+    .mantra {
+
+        font-size: 18px;
+    }
+
+    .page-header h1 {
+
+        font-size: 28px;
     }
 }
-

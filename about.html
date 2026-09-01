@@ -3,180 +3,245 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+    <title>
+        About | Sri Vara Siddhi Vinayaka Seva Samithi
+    </title>
 
-<title>About | Sri Vara Siddhi Vinayaka Seva Samithi</title>
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
-<link rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Montserrat:wght@400;500;600;700;800&family=Noto+Serif+Telugu:wght@500;600;700&display=swap"
+          rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Montserrat:wght@400;500;600;700;800&family=Noto+Serif+Telugu:wght@500;600;700&display=swap"
-      rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<nav>
 
-<div class="nav-container">
-
-<a href="index.html" class="logo">
-
-<div class="logo-icon">
-<img src="logo.png" alt="Logo">
-</div>
-
-<div class="logo-text">
-
-<div class="logo-telugu">
-శ్రీ వర సిద్ధి వినాయక సేవా సమితి
-</div>
-
-<div class="logo-name">
-SRI VARA SIDDHI VINAYAKA SEVA SAMITHI
-</div>
-
-<div class="logo-location">
-Bustand Center, Paritala
-</div>
-
-</div>
-
-</a>
-
-<ul class="nav-links">
-
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="idols.html">Ganesh Idols</a></li>
-<li><a href="annadhanam.html">Annadhanam</a></li>
-<li><a href="nimarjanam.html">Nimarjanam</a></li>
-<li><a href="#">Videos</a></li>
-<li><a href="youth.html">Youth</a></li>
-
-</ul>
-
-</div>
-
-</nav>
-<main class="page">
-
-<section class="about">
-
-<div class="section-title">
-
-<div class="section-symbol">
-🪔
-</div>
-
-<div class="telugu">
-మన వినాయక సేవా సమితి
-</div>
-
-<h2>
-Our Devotional Journey
-</h2>
-
-<p>
-Devotion • Unity • Service • Tradition
-</p>
-
+<div class="top-bar">
+    🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼
 </div>
 
 
-<div class="about-container">
-
-<div class="about-image">
-
-<img
-src="about.jpg"
-alt="Lord Ganesha">
-
-</div>
+<button class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open Menu">
+    ☰
+</button>
 
 
-<div class="about-text">
+<div class="sidebar-overlay"
+     id="sidebarOverlay"></div>
 
-<h3>
-స్వామి వారి ఆశీస్సులతో...
-</h3>
 
-<p>
+<aside class="sidebar" id="sidebar">
 
-Sri Vara Siddhi Vinayaka Seva Samithi,
-Busstand Center, Parirala brings together
-devotees and youth every year to celebrate
-Lord Ganesha with devotion and enthusiasm.
+    <div class="sidebar-logo">
 
-</p>
+        <a href="index.html" class="logo">
 
-<p>
+            <div class="logo-icon">
+                <img src="logo.png" alt="Logo">
+            </div>
 
-Our celebrations include Ganesh idol
-installation, pooja, cultural programs,
-Maha Annadhanam, community service and
-Nimarjanam.
+            <div class="logo-text">
 
-</p>
+                <div class="logo-telugu">
+                    శ్రీ వర సిద్ధి వినాయక సేవా సమితి
+                </div>
 
-<div class="mantra">
+                <div class="logo-name">
+                    SRI VARA SIDDHI VINAYAKA
+                </div>
 
-వక్రతుండ మహాకాయ
-సూర్యకోటి సమప్రభః
+                <div class="logo-location">
+                    Bustand Center, Paritala
+                </div>
 
-<br>
+            </div>
 
-నిర్విఘ్నం కురుమే దేవ
-శుభకార్యేషు సర్వదా
+        </a>
 
-</div>
+    </div>
 
-</div>
 
-</div>
+    <button class="sidebar-close"
+            id="sidebarClose">
+        ×
+    </button>
 
-</section>
+
+    <nav class="side-nav">
+
+        <a href="index.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span>Home</span>
+        </a>
+
+        <a href="about.html" class="nav-item active">
+            <span class="nav-icon">🙏</span>
+            <span>About</span>
+        </a>
+
+        <a href="idols.html" class="nav-item">
+            <span class="nav-icon">🐘</span>
+            <span>Ganesh Idols</span>
+        </a>
+
+        <a href="annadhanam.html" class="nav-item">
+            <span class="nav-icon">🍚</span>
+            <span>Annadhanam</span>
+        </a>
+
+        <a href="nimarjanam.html" class="nav-item">
+            <span class="nav-icon">🌊</span>
+            <span>Nimarjanam</span>
+        </a>
+
+        <a href="#" class="nav-item">
+            <span class="nav-icon">🎥</span>
+            <span>Videos</span>
+        </a>
+
+        <a href="youth.html" class="nav-item">
+            <span class="nav-icon">👥</span>
+            <span>Youth Team</span>
+        </a>
+
+    </nav>
+
+
+   
+
+</aside>
+
+
+<main class="main-content">
+
+    <section class="about">
+
+        <div class="section-title">
+
+            <div class="section-symbol">
+                🪔
+            </div>
+
+            <div class="telugu">
+                మన వినాయక సేవా సమితి
+            </div>
+
+            <h2>
+                Our Devotional Journey
+            </h2>
+
+            <p>
+                Devotion • Unity • Service • Tradition
+            </p>
+
+        </div>
+
+
+        <div class="about-container">
+
+            <div class="about-image">
+
+                <img src="about.jpg"
+                     alt="Lord Ganesha">
+
+            </div>
+
+
+            <div class="about-text">
+
+                <h3>
+                    స్వామి వారి ఆశీస్సులతో...
+                </h3>
+
+                <p>
+
+                    Sri Vara Siddhi Vinayaka Seva Samithi,
+                    Busstand Center, Paritala brings together
+                    devotees and youth every year to celebrate
+                    Lord Ganesha with devotion and enthusiasm.
+
+                </p>
+
+                <p>
+
+                    Our celebrations include Ganesh idol
+                    installation, pooja, cultural programs,
+                    Maha Annadhanam, community service and
+                    Nimarjanam.
+
+                </p>
+
+
+                <div class="mantra">
+
+                    వక్రతుండ మహాకాయ
+                    <br>
+                    సూర్యకోటి సమప్రభః
+
+                    <br><br>
+
+                    నిర్విఘ్నం కురుమే దేవ
+                    <br>
+                    శుభకార్యేషు సర్వదా
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <h3>
+            🕉️ Sri Vara Siddhi Vinayaka Seva Samithi
+        </h3>
+
+        <p>
+            Busstand Center, Paritala
+        </p>
+
+        <p class="footer-bappa">
+            🙏 Ganapathi Bappa Morya 🙏
+        </p>
+
+        <div class="designer">
+
+            Website Designed & Developed by
+
+            <strong>
+                UPPULURI VISHNU VARDHAN
+            </strong>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 Sri Vara Siddhi Vinayaka Seva Samithi.
+            All Rights Reserved.
+        </p>
+
+    </footer>
 
 </main>
 
 
-<footer>
-
-    <h3>
-        🕉️ Sri Vara Siddhi Vinayaka Seva Samithi
-    </h3>
-
-    <p>
-        Busstand Center, Parirala
-    </p>
-
-    <p style="margin-top:10px;">
-        🙏 Ganapathi Bappa Morya 🙏
-    </p>
-    <br>
-     Website Designed & Developed by
-    
-       
-
-        <strong >
-            UPPULURI VISHNU VARDHAN
-        </strong>
-
-    <p style="margin-top:20px;">
-        © 2026 Sri Vara Siddhi Vinayaka Seva Samithi.
-        All Rights Reserved.
-    </p>
-
-</footer>
+<script src="js/script.js"></script>
 
 </body>
 </html>
